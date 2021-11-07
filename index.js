@@ -27,11 +27,11 @@ function start(client) {
       if (message.shareDuration) {
         console.log("Live location started");
         client.onLiveLocation(message.from, liveLocationCallback);
-        await client.simulateTyping("xxxxx@c.us", true);
+        await client.simulateTyping(message.from, true);
         //wait 3 seconds
         //stop '...typing'
         await client.sendText(message.from, "Location observer runing ......");
-        await client.simulateTyping("xxxxx@c.us", false);
+        await client.simulateTyping(message.from, false);
       }
     });
     client.onMessage(async (message) => {
